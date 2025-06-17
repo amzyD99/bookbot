@@ -14,7 +14,12 @@ def get_book_text(book_path):
 
 def main():
     print("============ BOOKBOT ============")
-    
+    try:
+        book_path = sys.argv[1]
+    except:
+        print("Usage: python3 main.py <path_to_book>")
+
+
     print(f"Analyzing book found at {book_path}")
     book_txt = get_book_text(book_path)
 
