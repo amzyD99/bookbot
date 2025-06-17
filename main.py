@@ -4,6 +4,7 @@ current functionality: none
 only thing that exists here is a function that returns content of the book
 '''
 from stats import count_words, count_chars, sort_letters
+import sys
 
 def get_book_text(book_path):
     with open(book_path) as f:
@@ -13,7 +14,7 @@ def get_book_text(book_path):
 
 def main():
     print("============ BOOKBOT ============")
-    book_path = "./books/frankenstein.txt"
+    
     print(f"Analyzing book found at {book_path}")
     book_txt = get_book_text(book_path)
 
