@@ -3,7 +3,7 @@ Bookboot
 current functionality: none
 only thing that exists here is a function that returns content of the book
 '''
-from stats import count_words, count_chars
+from stats import count_words, count_chars, sort_letters
 
 def get_book_text(book_path):
     with open(book_path) as f:
@@ -19,14 +19,16 @@ def main():
 
     print("----------- Word Count ----------")
     word_count = count_words(book_txt)
-    print(f"{word_count} words found in the document")
+    print(f"Found {word_count} total words")
 
     print("--------- Character Count -------")
-    char_count, chars = count_chars(book_txt)
-
-    for char in chars:
-        if char.isalpha():
-            print(f"{char}: {char_count[char]}\n")
+    char_count = count_chars(book_txt)
+    sorted_count = sort_letters(char_count)
+      
+    for i in sorted_count:
+        if i["char"].isalpha():
+            print(f"{i["char"]}: {i["num"]}")
+        
     print("============= END ===============")
 
 

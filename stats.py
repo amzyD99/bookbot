@@ -23,5 +23,7 @@ def count_chars(text):
     return letters
 
 def sort_letters(letters):
-    return letters.sort(reverse=True, key=sort_on)
+    letters.sort(reverse=True, key=sort_on)
+    return letters
+
     
